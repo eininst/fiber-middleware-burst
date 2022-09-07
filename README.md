@@ -28,8 +28,8 @@ func main() {
     app := fiber.New()
 
     app.Use(burst.New(burst.Config{
-        //每秒产生100个令牌, 最多存储200个令牌。
-        Limiter: rate.NewLimiter(rate.Every(time.Second*100), 200),
+        //每秒产生200个令牌, 最多存储500个令牌。
+        Limiter: rate.NewLimiter(200, 500),
         //拿不到令牌时等待3秒，仍拿不到则返回 "too many requests"
         Timeout: time.Second * 3,
     }))
