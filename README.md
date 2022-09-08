@@ -36,7 +36,6 @@ func main() {
 
     _ = app.Listen(":8080")
 }
-
 ```
 
 > See [examples](/examples)
